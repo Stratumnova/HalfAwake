@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <!--
         Deliberately absent: android.permission.INTERNET.
@@ -24,8 +25,7 @@
         android:allowBackup="false"
         android:label="Halfwake"
         android:icon="@mipmap/ic_launcher"
-        android:theme="@style/Theme.Halfwake"
-        xmlns:tools="http://schemas.android.com/tools">
+        android:theme="@style/Theme.Halfwake">
 
         <activity
             android:name=".MainActivity"
@@ -47,10 +47,6 @@
                 android:resource="@xml/halfwake_widget_info" />
         </receiver>
 
-        <!-- ACTION_BATTERY_LOW / ACTION_BATTERY_OKAY are exempt from the
-             implicit-broadcast restrictions Android added in Oreo, so a
-             manifest-registered receiver still works without a foreground
-             service keeping the app alive. -->
         <receiver
             android:name=".BatteryLowReceiver"
             android:exported="false">
